@@ -3,6 +3,8 @@ package com.uttab.uttabbaza
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.huawei.agconnect.auth.AGConnectAuth
+import com.huawei.agconnect.auth.AGConnectUser
 import com.uttab.uttabbaza.databinding.ActivityPrincipalBinding
 
 class PrincipalActivity : AppCompatActivity() {
@@ -14,6 +16,12 @@ class PrincipalActivity : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val user = AGConnectAuth.getInstance().currentUser
+        if(user == null) jumpToLogin()
+        else jumpToHome(user)
+
+
+
         binding.button2.setOnClickListener {
             val intent: Intent = Intent (this, LoginActivity::class.java)
             startActivity(intent)
@@ -24,4 +32,22 @@ class PrincipalActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun jumpToHome(user: AGConnectUser) {
+        val intent = Intent(this, HomeActivity::class.java).let{
+            it.putExtra("account", user.displayName)
+            jump(it)
+        }
+    }
+
+    private fun jump(intent:Intent){
+        startActivity(intent)
+        finish()
+    }
+
+    private fun jumpToLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+    }
+
+
 }

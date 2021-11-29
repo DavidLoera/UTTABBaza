@@ -1,44 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   tools:context=".LoginActivity"
-                                                   android:background="@color/white">
-
-    <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginBottom="384dp"
-            android:background="@drawable/input_field"
-            android:ems="10"
-            android:fontFamily="@font/regular"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
-
-    <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:background="@drawable/input_field"
-            android:ems="10"
-            android:fontFamily="@font/regular"
-            android:hint="Correo electronico"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.287" />
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity"
+        android:background="@color/white">
 
     <TextView
             android:id="@+id/textView5"
@@ -53,25 +21,41 @@
             app:layout_constraintHorizontal_bias="0.272"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.131" />
+            app:layout_constraintVertical_bias="0.131"/>
 
     <Button
-            android:id="@+id/button"
-            android:layout_width="162dp"
-            android:layout_height="53dp"
+            android:id="@+id/mailbtn"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
             android:background="@drawable/button"
             android:fontFamily="@font/regular"
-            android:text="Inicia ahora"
+            android:text="Inicia ahora con tu email"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.53" />
+            app:layout_constraintVertical_bias="0.43"/>
 
+    <Button
+            android:id="@+id/anonimo"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button2"
+            android:fontFamily="@font/regular"
+            android:text="Entrar como anónimo"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.572"/>
     <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
@@ -82,11 +66,10 @@
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.868"
+            app:layout_constraintHorizontal_bias="0.871"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.53" />
-
+            app:layout_constraintVertical_bias="0.688"/>
     <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -104,7 +87,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.963" />
+            app:layout_constraintVertical_bias="0.963"/>
 
     <TextView
             android:id="@+id/register"
@@ -122,7 +105,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.965" />
+            app:layout_constraintVertical_bias="0.965"/>
 
     <ImageView
             android:id="@+id/arrow"
@@ -134,5 +117,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.052"
-            app:srcCompat="@drawable/arrow" />
+            app:srcCompat="@drawable/arrow"/>
+
+    <com.huawei.hms.support.hwid.ui.HuaweiIdAuthButton
+            android:id="@+id/huaweiIdBtn"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.492" app:layout_constraintVertical_bias="0.292">
+
+    </com.huawei.hms.support.hwid.ui.HuaweiIdAuthButton>
 </androidx.constraintlayout.widget.ConstraintLayout>
